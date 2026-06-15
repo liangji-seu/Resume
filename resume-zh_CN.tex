@@ -19,6 +19,9 @@
   \email{15262272286@163.com} \textperiodcentered\ 
   \phone{(+86) 152-6227-2286} \textperiodcentered\ 
   \homepage[liangji-seu.github.io]{https://liangji-seu.github.io}}
+
+\centerline{\sffamily\large{求职意向：大模型推理优化，AI Infra，嵌入式驱动}}
+\vspace{1.5ex}
  
 \section{\faGraduationCap\  教育背景}
 \begin{tabular*}{\textwidth}{@{}p{0.24\textwidth} p{0.22\textwidth} p{0.12\textwidth} @{\extracolsep{\fill}} r@{}}
@@ -29,37 +32,38 @@
   \multicolumn{4}{@{}l}{本科绩点：3.75/4.0，专业排名：8/40}
 \end{tabular*}
 
-\section{\faUsers\ 实习/项目经历}
-\datedsubsection{\textbf{黑科技公司} 上海}{2015年3月 -- 2015年5月}
-\role{实习}{经理: 高富帅}
-xxx后端开发
+\section{\faUsers\ 项目经历}
+\datedsubsection{\textbf{基于 CUDA 的大模型推理框架开发与性能分析}}{2026.05 -- 2026.06}
+设计并构建高效、灵活且可扩展的深度学习模型推理框架，通过优化模型加载与推理流程，提升处理速度和资源利用效率，支撑多种业务场景下的模型推理需求。
 \begin{itemize}
-  \item 实现了 xxx 特性
-  \item 后台资源占用率减少8\%
-  \item xxx
+  \item \textbf{架构搭建：}实现支持 Llama 2/3.2、Qwen 等主流深度学习模型的推理框架，支持 YOLOv5、ResNet 等模型，支持 CPU/GPU 双后端推理与 KV-Cache 等常见优化手段。
+  \item \textbf{算子调优：}针对 CUDA 算子进行深度定制和优化，实现 RMSNorm、MatMul、KV-Cache、MultiHead Attention、FlashAttention 等核心算子。
+  \item \textbf{性能分析：}使用 Night-Compute、Night-System 等工具分析和调优算子性能；在 RTX 4090 上对 Qwen3-0.6B FP32 模型测试，单轮生成 332 个 decode tokens，TTFT 约 47.8ms，平均 decode latency 约 3.73ms/token，decode 吞吐约 267.9 token/s。
+  \item \textbf{项目成果：}完成 Llama 2/3.2 与 Qwen 模型中多个复杂 CUDA 算子的开发和性能优化，覆盖 RMSNorm、MatMul、KV-Cache、MHA 等模块，提升推理速度与资源利用率。
+  \item \textbf{框架研究：}深入学习 llama.cpp、vLLM 等大模型推理框架，对 llama.cpp 的内部实现和优化技巧进行研究，包括 PagedAttention、Continuous batching 等机制。
 \end{itemize}
 
-\datedsubsection{\textbf{分布式科学上网姿势}}{2014年6月 -- 至今}
-\role{Golang, Linux}{个人项目，和富帅糕合作开发}
-\begin{onehalfspacing}
-分布式负载均衡科学上网姿势, https://github.com/cyfdecyf/cow
-\begin{itemize}
-  \item 修复了连接未正常关闭导致文件描述符耗尽的 bug
-  \item 使用Chord 哈希 URL, 实现稳定可靠地分流
-  \item xxx (尽量使用量化的客观结果)
-\end{itemize}
-\end{onehalfspacing}
+\section{\faBriefcase\ 工作经历}
+\begin{tabular*}{\textwidth}{@{}p{0.28\textwidth} p{0.32\textwidth} @{\extracolsep{\fill}} r@{}}
+  \textbf{擎朗智能} & 嵌入式软件工程师（BSP） & 2022.06 -- 2024.06 \\
+\end{tabular*}
 
-\datedsubsection{\textbf{\LaTeX\ 简历模板}}{2015 年5月 -- 至今}
-\role{\LaTeX, Python}{个人项目}
-\begin{onehalfspacing}
-优雅的 \LaTeX\ 简历模板, https://github.com/billryan/resume
+\textbf{项目一：日本餐饮机型 T10 研发}
 \begin{itemize}
-  \item 容易定制和扩展
-  \item 完善的 Unicode 字体支持，使用 \XeLaTeX\ 编译
-  \item 支持 FontAwesome 4.5.0
+  \item 负责软银定制机型的系统预研、原型机搭建到量产落地，支撑该机型通过灰度测试并在日本市场规模量产。
+  \item 基于 RK3288 Android 6 平台，根据原理图和屏幕规格树完成显示链路适配，修改 DTS 与配置文件，实现 LVDS 与 eDP 双屏异显。
+  \item 面向多 USB Camera 场景，通过 UDEV 规则和驱动层改造实现设备节点静态绑定，并将相机物理 ID 打通至 Framework/CameraService，提升应用层调用稳定性。
+  \item 基于 Linux input 与 pinctrl 子系统完成多功能 GPIO 按键事件上报、上下拉配置和 Android Framework 层事件分发。
+  \item 梳理 UI 板防火墙规则链，修改 drop 规则实现下层 RK3399 通过 RK3288 反向远程访问 PC。
 \end{itemize}
-\end{onehalfspacing}
+
+\textbf{项目二：酒店机器人 W3 电子架构优化（降本增效）}
+\begin{itemize}
+  \item 独立负责核心主控系统架构更新与降本方案实施，推进显示、USB、双系统方案的预研和落地。
+  \item 基于 RK3399 Android 10 平台编写 GM8775C 驱动并调试后端显示链路，实现 MIPI 转 LVDS 10.1 寸屏幕适配，并推动板卡厂商修复底层引脚布线问题。
+  \item 针对量产线束仅支持 USB 2.0 的问题，重构 DeviceTree 中 USB 硬件拓扑，实现 Type-C to Type-A 的 USB 2.0 OTG，并支持应用层手动切换 host/device 模式。
+  \item 预研双系统二合一架构，在磁盘中划分 OEM 镜像区域，通过 init.rc 自动挂载并扩容镜像，在分区内使用 QEMU 搭建轻量 Linux 系统。
+\end{itemize}
 
 % Reference Test
 %\datedsubsection{\textbf{Paper Title\cite{zaharia2012resilient}}}{May. 2015}
@@ -68,24 +72,14 @@ xxx后端开发
 %  \item main contribution
 %\end{itemize}
 
-\section{\faCogs\ IT 技能}
-% increase linespacing [parsep=0.5ex]
-\begin{itemize}[parsep=0.5ex]
-  \item 编程语言: C == Python > C++ > Java
-  \item 平台: Linux
-  \item 开发: xxx
-\end{itemize}
+\section{\faCertificate\ 技能证书/荣誉}
+大学英语四/六级（CET-4/6），东南大学二等学业奖学金，东南大学高等数学竞赛校级二等奖，第 17 届 RoboCup 机器人竞赛校级优秀奖。
 
-\section{\faHeartO\ 获奖情况}
-\datedline{\textit{第一名}, xxx 比赛}{2013 年6 月}
-\datedline{其他奖项}{2015}
-
-\section{\faInfo\ 其他}
-% increase linespacing [parsep=0.5ex]
+\section{\faInfo\ 自我评价}
 \begin{itemize}[parsep=0.5ex]
-  \item 基本信息：25岁，江苏扬州
-  \item 个人博客: \href{https://liangji-seu.github.io}{liangji-seu.github.io}
-  \item 语言: 大学英语四/六级（CET-4/6）
+  \item \textbf{专业素养：}基础知识掌握扎实，具备较强的抗压能力、实验设计与数据分析能力，重视理论与实践相结合，熟悉计算机体系架构。
+  \item \textbf{实践能力：}有良好的任务沟通能力和解决问题习惯，以及动手解决问题的能力。
+  \item \textbf{团队合作：}具备良好的团队协作精神，善于与他人沟通合作，及时汇报工作进度，抗压能力强。
 \end{itemize}
 
 %% Reference

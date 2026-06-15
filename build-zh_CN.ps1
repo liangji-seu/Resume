@@ -5,7 +5,16 @@ if (Test-Path $miktexBin) {
   $env:Path = "$miktexBin;$env:Path"
 }
 
-xelatex -interaction=nonstopmode resume-zh_CN.tex
-xelatex -interaction=nonstopmode resume-zh_CN.tex
+$date = Get-Date -Format "yyyy-MM-dd"
+$name = "$([char]0x6881)$([char]0x5409)"
+$resume = "$([char]0x7b80)$([char]0x5386)"
+$outputPdf = "${name}_${resume}_$date.pdf"
+$jobName = "resume-zh_CN-build"
 
-Write-Host "Done: resume-zh_CN.pdf"
+xelatex -interaction=nonstopmode "-jobname=$jobName" resume-zh_CN.tex
+xelatex -interaction=nonstopmode "-jobname=$jobName" resume-zh_CN.tex
+
+Copy-Item -LiteralPath "$jobName.pdf" -Destination $outputPdf -Force
+Remove-Item -LiteralPath "$jobName.pdf" -Force
+
+Write-Host "Done: $outputPdf"
