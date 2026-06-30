@@ -9,6 +9,18 @@
 /\!*
 .DS_Store
 *.pdf
+tmp/
+照片.png
+
+############################################
+## LOCAL BUILD ARTIFACTS
+############################################
+
+resume-zh_CN-build.*
+resume-photo-check.*
+resume-zh_CN-check*.*
+resume-zh_CN-preview*.*
+resume-zh_CN-time-check.*
 
 ############################################
 ## LATEX TEMPORARY FILES
